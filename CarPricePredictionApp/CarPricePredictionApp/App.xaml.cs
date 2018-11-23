@@ -11,7 +11,7 @@ namespace CarPricePredictionApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Pages.PredictionPage());
         }
 
         protected override void OnStart()

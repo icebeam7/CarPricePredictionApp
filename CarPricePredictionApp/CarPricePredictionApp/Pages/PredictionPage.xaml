@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarPricePredictionApp.Pages.PredictionPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Keyboard" Value="Numeric" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid BackgroundColor="White" Padding="5" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Make" />
+                <Label Grid.Row="1" Grid.Column="0" Text="Body Style" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Wheel Size" />
+                <Label Grid.Row="3" Grid.Column="0" Text="Engine Size" />
+                <Label Grid.Row="4" Grid.Column="0" Text="Horse Power" />
+                <Label Grid.Row="5" Grid.Column="0" Text="Peak RPM" />
+                <Label Grid.Row="6" Grid.Column="0" Text="Highway MPG" />
+
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="txtMake" Keyboard="Default" />
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="txtBodyStyle" Keyboard="Default" />
+                <Entry Grid.Row="2" Grid.Column="1" x:Name="txtWheelSize" />
+                <Entry Grid.Row="3" Grid.Column="1" x:Name="txtEngineSize" />
+                <Entry Grid.Row="4" Grid.Column="1" x:Name="txtHorsePower" />
+                <Entry Grid.Row="5" Grid.Column="1" x:Name="txtPeakRPM" />
+                <Entry Grid.Row="6" Grid.Column="1" x:Name="txtHighwayMPG" />
+
+                <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" 
+                        x:Name="btnPredict" HorizontalOptions="Center"
+                        Text="Predict the price of this car" Clicked="btnPredict_Clicked" />
+
+                <Label Grid.Row="8" Grid.Column="0" Text="Price" />
+                <Label Grid.Row="8" Grid.Column="1" x:Name="txtPrice" 
+                       TextColor="Green" FontAttributes="Bold" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
